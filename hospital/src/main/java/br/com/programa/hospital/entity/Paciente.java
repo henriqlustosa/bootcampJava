@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -43,8 +42,8 @@ public class Paciente {
 	    private String cpf;
 
 	    private LocalDate dt_nascimento;
-
+	    
 	    @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-	    private List<Phone> phones = new ArrayList<>();
+	    private List<Phone> phones ;
 
 }
